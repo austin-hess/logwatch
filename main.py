@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from sf import SfConnection
 import tkinter as tk
+import json
 from login_form import LoginForm
 from logging_form import LoggingForm
 from user_list import UserList
@@ -31,14 +32,16 @@ class Application(tk.Frame):
         print(self.login_form.security_token_entry.get())
         print(self.login_form.is_test_var.get())
 
-        '''
+        
         self.connection = SfConnection(
             self.login_form.username_entry.get(),
             self.login_form.password_entry.get(),
             self.login_form.security_token_entry.get(),
             self.login_form.is_test_var.get()
         )
-        '''
+
+        self.login_form.setLoggedIn(True)
+
 
     def makeResponsive(self):
         top=self.winfo_toplevel()

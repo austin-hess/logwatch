@@ -8,11 +8,6 @@ class SfConnection():
             username=username,
             password=password,
             security_token=security_token,
-            domain=isSandbox
+            domain = 'test' if isSandbox else 'login'
         )
         print('connected')
-
-        print(self.salesforce)
-
-    def query(self, query):
-        return self.salesforce.query(query)
