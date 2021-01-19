@@ -59,16 +59,6 @@ class Application(tk.Frame):
         self.rowconfigure(2,weight=1)
         self.rowconfigure(3,weight=6)
 
-salesforce = SfConnection(
-    "ahess@nnb.com.custondev", 
-    "SoCasual#1", 
-    "agrzEf7V1xHNm3LLCyre4Gqp6", 
-    True
-)
-
-result = salesforce.query("SELECT Id, LastModifiedDate FROM ApexLog ORDER BY LastModifiedDate DESC LIMIT 5")
-print(result)
-
 app = Application()
 app.master.title('Apex Monitor')
 app.master.state('zoomed')
